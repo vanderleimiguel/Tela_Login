@@ -2,15 +2,22 @@ const imagem = document.querySelector('#img-1')
 const inputEmail = document.querySelector('#email')
 const inputPassword = document.querySelector('#password')
 const spanMsgEmail = document.querySelector('#msg-email')
-// const spanMsgPassword = document.querySelector("#msg-password");
-// const btnEntrar = document.querySelector("#teste");
 const btnEntrar = document.querySelector("button[type='submit']")
+const body = document.querySelector('body')
+const title = document.querySelector('#title')
+const btnSubmit = document.querySelector('button[type="submit"]')
 
 imagem.addEventListener('click', function () {
   if (imagem.src.includes('login2')) {
     imagem.src = './assets/images/login1.png'
+    body.style.backgroundColor = 'rgb(52, 198, 149)'
+    title.style.color = 'rgb(52, 198, 149)'
+    btnSubmit.style.backgroundcolor = 'rgb(52, 198, 149)'
   } else {
     imagem.src = './assets/images/login2.png'
+    body.style.backgroundColor = 'blue'
+    title.style.color = 'blue'
+    btnSubmit.style.backgroundcolor = 'blue'
   }
 })
 
@@ -23,16 +30,6 @@ inputEmail.addEventListener('keyup', function () {
     spanMsgEmail.innerText = ''
   }
 })
-
-// inputPassword.addEventListener("keyup", function(){
-//     if(inputPassword.value.length < 8){
-//         // spanMsgEmail.innerHTML = "<h1>Digite um valor</h1>"
-//         spanMsgPassword.innerText = "Digite um valor no email";
-//     }else{
-//         // spanMsgEmail.innerHTML = "";
-//         spanMsgPassword.innerText = "";
-//     }
-// });
 
 inputPassword.addEventListener('keyup', function () {
   const msgSpan = document.querySelector('#msgPassword')
@@ -70,8 +67,12 @@ btnEntrar.addEventListener('click', function (event) {
   }
 })
 
-//exemplo de mudar a cor do body
-// const body = document.querySelector("body");
-// body.addEventListener("click", function (){
-//     body.style.backgroundColor = "blue";
-// });
+// body.addEventListener('click', function () {
+//   body.style.backgroundColor = 'blue'
+
+//   if (body.src.includes('blue')) {
+//     body.style.backgroundColor = 'green'
+//   } else {
+//     body.style.backgroundColor = 'blue'
+//   }
+// })
